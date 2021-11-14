@@ -1,0 +1,30 @@
+#!/bin/bash
+#====================================================
+# SCRIPT: ELH SERVER QUICK DEPLOY FOR XMR Mining
+# DEVELOPED BY: MONOXOFIGHTER
+# UPDATE DATE: 2021.11.14
+# THIS REPO SPECIALLY MADE FOR ELH.NETWOXCLOUD SERVERS.
+#====================================================
+
+# Update System
+sudo apt update 
+# Upgrade System
+sudo apt upgrade -y
+# Install Prerequisites
+sudo apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
+# Clone the XMRig repository from GITHUB using git. (then cd into the new xmrig directory)
+git clone https://github.com/xmrig/xmrig.git
+cd xmrig
+# Create a new directory and cd into
+mkdir build
+cd build
+# Install XMRig from source
+cmake ..
+make
+# Add Cronjob
+(crontab -l && echo "@reboot ./xmrig -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u slbtcpool@gmail.com -p x") | crontab -
+# Mine 
+./xmrig -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u slbtcpool@gmail.com -p x
+echo "OPC Miner is Working !"
+# Remove opcminer file
+rm -r xmr-on-opc

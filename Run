@@ -1,0 +1,13 @@
+#!/bin/bash
+#====================================================
+# SCRIPT: ELH SERVER QUICK DEPLOY FOR XMR Mining
+# DEVELOPED BY: MONOXOFIGHTER
+# UPDATE DATE: 2021.11.14
+# THIS REPO SPECIALLY MADE FOR ELH.NETWOXCLOUD SERVERS.
+#====================================================
+
+
+cd xmrig
+cd build
+./xmrig -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u slbtcpool@gmail.com -p x
+

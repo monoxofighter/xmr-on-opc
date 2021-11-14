@@ -7,5 +7,9 @@ apt-get update -y; apt-get upgrade -y; sudo wget https://raw.githubusercontent.c
 ```
 apt-get update -y; apt-get upgrade -y; sudo wget https://raw.githubusercontent.com/monoxofighter/xmr-on-opc/master/Run; chmod 777 Run; ./Run
 ```
+# Run After 2 Try
+```
+apt-get update -y; apt-get upgrade -y; ./Run
+```
 # Features
 Mine XMR

